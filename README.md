@@ -18,7 +18,7 @@ It will remove all ```mongodb*``` apt packages in ```./scripts/build-server.sh``
 
 It install the required apt dependencies and generates the ```SystemD``` service, enables and starts.
 
-Is is for testing, you build it in Docker to test it, but the live building is on the server in the directory in the GIT repository ```build``` directory and then it puts the files into ```/usr/bin```.
+It is for testing, you build it in Docker to test it, but the live building is on the server in the directory in the GIT repository ```build``` directory and then it puts the files into ```/usr/bin```.
 
 ## Scripts
 
