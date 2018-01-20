@@ -1,0 +1,50 @@
+{
+    "name": "p3x-docker-debian-testing-mongodb-stable",
+    "corifeus": {
+        "prefix": "p3x-",
+        "type": "build",
+        "cdn": true,
+        "nodejs": "v9.4.0",
+        "icon": "fa fa-database",
+        "code": "MissOut"
+    },
+    "version": "3.6.117-60",
+    "description": "Debian Stretch / Buster / Bull / Bullseye MongoDB and MongoDB Tools build stable ",
+    "main": "src/index.js",
+    "directories": {
+        "test": "test"
+    },
+    "scripts": {
+        "test": "grunt",
+        "coverage": "istanbul cover node_modules/mocha/bin/_mocha --report clover -- -R spec test/mocha/**/*.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/patrikx3.com/docker-debian-testing-mongodb-stable"
+    },
+    "keywords": [
+        "debian",
+        "mongodb",
+        "mongodb tools",
+        "stretch",
+        "buster",
+        "bullseye",
+        "testing",
+        "tools",
+        "mongodb-tools",
+        "build",
+        "linux",
+        "stable",
+        "latest"
+    ],
+    "author": "Patrik Laszlo <alabard@gmail.com>",
+    "license": "MIT",
+    "devDependencies": {
+        "corifeus-builder": "^1.7.1140-276"
+    },
+    "engines": {
+        "node": ">=8.9.0"
+    },
+    "homepage": "https://pages.corifeus.com/docker-debian-testing-mongodb-stable",
+    "dependencies": {}
+}
