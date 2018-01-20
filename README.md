@@ -10,7 +10,7 @@
 
 It is basically a built for the latest MongoDB for Debian.
 
-The current varsion is the v3.6.x build.
+The current varsion is the r3.6.x build (release).
 
 ### Warning
 
@@ -35,9 +35,8 @@ If below you get an error, please create and ```issue```, because it is possible
 
 The command:
 ```bash
-sudo ./scripts/build-server.sh r3.6.2
+sudo ./scripts/build-server.sh
 ```
-
 
 From:  
 https://github.com/mongodb/mongo/wiki/Build-Mongodb-From-Source
@@ -49,7 +48,7 @@ All defaults are in the config are the MongoDB uses:
 It generates everything, all you have to do:
 
 ```bash
-sudo ./scripts/build-tools.sh r3.6.2
+sudo ./scripts/build-server.sh r3.6.2
 ```
 
 ### 2. Build MongoDB Tools
@@ -63,6 +62,11 @@ It generates and install GoLang and builds the tools that you find them in:
 github.com/mongodb/mongo-tools
 
 Then it puts all tools into the default Debian ```/usr/bin``` directories.
+
+The exact command is like:
+```bash
+sudo ./scripts/build-tools.sh r3.6.2
+```
 
 ### 3. Sometimes check the kernel
 
