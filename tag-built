@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+if [ -z "${1}" ]; then
+    echo "First argument is unset or set to the empty string, it should be a container_id that is built before installed."
+    exit 1
+fi
+
+docker commit ${1} patrikx3/docker-debian-testing-mongodb-stable:built
