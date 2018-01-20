@@ -58,8 +58,8 @@ The command:
 ./scripts/build-tools.sh
 ```
 
-It generates and install GoLang and builds the tools that you find them in:  
-github.com/mongodb/mongo-tools
+It generates and install GoLang and builds the tools that you find them in:    
+https://github.com/mongodb/mongo-tools
 
 Then it puts all tools into the default Debian ```/usr/bin``` directories.
 
