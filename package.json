@@ -8,8 +8,8 @@
         "icon": "fa fa-database",
         "code": "MissOut"
     },
-    "version": "3.6.120-73",
-    "description": "Debian Stretch / Buster / Bullseye MongoDB and MongoDB Tools build stable ",
+    "version": "3.6.121-75",
+    "description": "Debian Stretch / Buster / Bullseye / Testing MongoDB and MongoDB Tools build stable ",
     "main": "src/index.js",
     "directories": {
         "test": "test"
