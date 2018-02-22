@@ -48,7 +48,7 @@ All defaults are in the config are the MongoDB uses:
 It generates everything, all you have to do:
 
 ```bash
-sudo ./scripts/build-server.sh r3.6.2
+sudo ./scripts/build-server.sh r3.6.3
 ```
 
 ### 2. Build MongoDB Tools
@@ -65,7 +65,7 @@ Then it puts all tools into the default Debian ```/usr/bin``` directories.
 
 The exact command is like:
 ```bash
-sudo ./scripts/build-tools.sh r3.6.2
+sudo ./scripts/build-tools.sh r3.6.3
 ```
 
 ### 3. Sometimes check the kernel

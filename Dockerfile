@@ -17,7 +17,7 @@ ENV FORCE_UNSAFE_CONFIGURE=1
 ENV SHELL=/bin/bash
 
 ARG MONGODB_BRANCH=v3.6
-ARG MONGODB_RELEASE=r3.6.2
+ARG MONGODB_RELEASE=r3.6.3
 
 ENV PATH="/build/install:/build/mongo:${PATH}"
 
@@ -45,9 +45,9 @@ RUN git checkout tags/${MONGODB_RELEASE}
 
 RUN pip install -r buildscripts/requirements.txt
 RUN pip2 install --user regex
-#RUN scons all --disable-warnings-as-errors -j 8 --ssl
+RUN scons all --disable-warnings-as-errors -j 8 --ssl
 #RUN scons core --disable-warnings-as-errors -j 8 --ssl
-#RUN scons install --disable-warnings-as-errors -j 8 --prefix /usr/bin
+RUN scons install --disable-warnings-as-errors -j 8 --prefix /usr/bin
 
 CMD /bin/bash
 

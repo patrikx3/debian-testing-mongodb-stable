@@ -9,8 +9,8 @@ set -e
 
 # some info
 echo
-#echo "Works like command, use a tag: sudo ./scripts/build-.sh v3.6 r3.6.2"
-echo "Works like command, use a tag: sudo ./scripts/build-server.sh r3.6.2"
+#echo "Works like command, use a tag: sudo ./scripts/build-.sh v3.6 r3.6.3"
+echo "Works like command, use a tag: sudo ./scripts/build-server.sh r3.6.3"
 echo
 
 # check if we are root
@@ -28,14 +28,14 @@ fi
 
 # require mongo release
 #if [ -z "${2}" ]; then
-#    echo "The second argument must be the MONGODB_RELEASE for example 'r3.6.2'"
+#    echo "The second argument must be the MONGODB_RELEASE for example 'r3.6.3'"
 #    exit 1
 #fi
 #MONGODB_RELEASE="${2}"
 
 # require mongo release
 if [ -z "${1}" ]; then
-    echo "The first argument must be the MONGODB_RELEASE for example 'r3.6.2'"
+    echo "The first argument must be the MONGODB_RELEASE for example 'r3.6.3'"
     exit 1
 fi
 MONGODB_RELEASE="${1}"
