@@ -96,8 +96,10 @@ pushd $BUILD
         cp /etc/mongodb.conf /etc/mongodb.conf.$TIMESTAMP.save
 
         # copy the mongodb.conf configured and the systemd service file
-        chmod o-rwx -R $ROOT_FS
+        #chmod o-rwx -R $ROOT_FS
+        chmod root:root -R $ROOT_FS
         cp -avr $ROOT_FS/. /
+        chmod $USER:$USER -R $ROOT_FS
 
         # generate mongodb user and group
         useradd mongodb -d /var/lib/mongodb -s /bin/false || true
