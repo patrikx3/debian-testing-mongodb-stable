@@ -92,14 +92,17 @@ pushd $BUILD
         scons install --disable-warnings-as-errors -j $CORES --prefix /usr
 
         # create a copy of the old config
-        TIMESTAMP=$(($(date +%s%N)/1000000))
-        cp /etc/mongodb.conf /etc/mongodb.conf.$TIMESTAMP.save
+        #TIMESTAMP=$(($(date +%s%N)/1000000))
+        #cp /etc/mongodb.conf /etc/mongodb.conf.$TIMESTAMP.save
 
         # copy the mongodb.conf configured and the systemd service file
-        #chmod o-rwx -R $ROOT_FS
-        chmod root:root -R $ROOT_FS
-        cp -avr $ROOT_FS/. /
-        chmod $USER:$USER -R $ROOT_FS
+        # dangerous!!! removed
+        # cp -avr $ROOT_FS/. /
+
+        MONGODB_SERVICE=etc/systemd/system/mongodb-server.service
+        cp $ROOT_FS/$MONGODB_SERVICE /$MONGODB_SERVICE
+        chown root:root /$MONGODB_SERVICE
+        chmod o-rwx /$MONGODB_SERVICE
 
         # generate mongodb user and group
         useradd mongodb -d /var/lib/mongodb -s /bin/false || true
@@ -120,12 +123,8 @@ pushd $BUILD
         chown -R mongodb:mongodb /run/mongodb
 
         # add safety to the mongodb config file
-        chmod o-rwx /etc/mongodb.conf
-        chown mongodb:mongodb /etc/mongodb.conf
-
-        # add safety to the mongodb systemd service file
-        chmod o-rwx /etc/systemd/system/mongodb-server.service
-        chown root:root /etc/systemd/system/mongodb-server.service
+        chmod o-rwx /etc/mongodb.conf || true
+        chown mongodb:mongodb /etc/mongodb.conf || true
 
         # reload systemd services
         systemctl daemon-reload
@@ -134,10 +133,13 @@ pushd $BUILD
         systemctl enable mongodb-server
 
         # start the mongodb-server
-        service mongodb-server start
+        #service mongodb-server start
 
     # exit of the mongo directory
     popd
 
 # exit the build directory
 popd
+
+# delete current build directory
+rm -rf $BUILD/mongo

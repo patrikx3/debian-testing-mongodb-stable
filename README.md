@@ -14,11 +14,29 @@ The current varsion is the r3.6.x build (release).
 
 ### Warning
 
-It will remove all ```mongodb*``` apt packages in ```./scripts/build-server.sh```, your old ```/etc/mongodb.conf``` (though it saves by timestamp like ```/etc/mongodb.conf.$TIMESTAMP.save```) and ```/etc/systemd/system/mongodb-server.service``` is replaced.
+It will remove all ```mongodb*``` apt packages in ```./scripts/build-server.sh``` and ```/etc/systemd/system/mongodb-server.service``` is replaced.  
 
-It install the required apt dependencies and generates the ```SystemD``` service, enables and starts.
+It install the required apt dependencies and generates the ```SystemD``` service and makes it enabled.  
 
-It is for testing, you build it in Docker to test it, but the live building is on the server in the directory in the GIT repository ```build``` directory and then it puts the files into ```/usr/bin```.
+For testing, you build it in Docker to test it, but the live building is on the server in the directory in the GIT repository ```build``` directory and then it puts the files into ```/usr/bin```.  
+
+Before you start the database, but after the build, you are required to create a config, a skeleton is here:  
+```artifacts/root-filesystem/etc/mongodb.conf```.
+
+Like:
+
+
+#### Add safety to the mongodb config file
+
+```bash
+cp ./artifacts/root-filesystem/etc/mongodb.conf /etc/mongodb.conf
+chmod o-rwx /etc/mongodb.conf
+chown mongodb:mongodb /etc/mongodb.conf
+```
+
+After you created the config, you start the database like:  
+```service mongodb-server start```
+
 
 ## Scripts
 
@@ -98,7 +116,7 @@ service mongodb-server start
 
 ---
 
-[**P3X-DOCKER-DEBIAN-TESTING-MONGODB-STABLE**](https://pages.corifeus.com/docker-debian-testing-mongodb-stable) Build v3.6.145-97 
+[**P3X-DOCKER-DEBIAN-TESTING-MONGODB-STABLE**](https://pages.corifeus.com/docker-debian-testing-mongodb-stable) Build v3.6.147-108 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
 

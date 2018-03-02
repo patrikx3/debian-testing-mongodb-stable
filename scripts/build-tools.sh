@@ -75,3 +75,6 @@ pushd $BUILD
 
 # exit the build directory
 popd
+
+# delete current build directory
+rm -rf $BUILD/mongo-tools

@@ -1,7 +1,7 @@
 [Unit]
-Description=An object/document-oriented database
-Documentation=man:mongod(1)
+Description=High-performance, schema-free document-oriented database
 After=network.target
+Documentation=https://docs.mongodb.org/manual
 
 [Service]
 User=mongodb
@@ -17,6 +17,9 @@ LimitCPU=infinity
 LimitAS=infinity
 LimitNOFILE=64000
 LimitNPROC=64000
+LimitMEMLOCK=infinity
+TasksMax=infinity
+TasksAccounting=false
 
 [Install]
 WantedBy=multi-user.target
