@@ -18,7 +18,7 @@ It will remove all ```mongodb*``` apt packages in ```./scripts/build-server.sh``
 
 It install the required apt dependencies and generates the ```SystemD``` service and makes it enabled.  
 
-For testing, you build it in Docker to test it, but the live building is on the server in the directory in the GIT repository ```build``` directory and then it puts the files into ```/usr/bin```.  
+For testing, you may build it in Docker, but the live building is on the server in the directory in the GIT repository ```build``` directory and then it puts the files into ```/usr/bin```.  
 
 Before you start the database, but after the build, you are required to create a config, a skeleton is here:  
 ```artifacts/root-filesystem/etc/mongodb.conf```.
