@@ -86,6 +86,8 @@ The exact command is like:
 sudo ./scripts/build-tools.sh r3.6.3
 ```
 
+<!---
+
 ### 3. Sometimes check the kernel
 
 
@@ -95,6 +97,8 @@ The command:
 ```
 
 It the kernel have changed, it better to re-build the server and the tools.
+
+Right now the stable MongoDB 3.6.3 doesn't show the kernel version anymore
 
 <!---
 # Add user
