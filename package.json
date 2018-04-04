@@ -8,7 +8,7 @@
         "icon": "fa fa-database",
         "code": "MissOut"
     },
-    "version": "3.6.166-132",
+    "version": "3.6.168-133",
     "description": "Debian Stretch / Buster / Bullseye / Testing MongoDB and MongoDB Tools build stable ",
     "main": "src/index.js",
     "directories": {
@@ -40,7 +40,7 @@
     "author": "Patrik Laszlo <alabard@gmail.com>",
     "license": "MIT",
     "devDependencies": {
-        "corifeus-builder": "^1.7.1284-340"
+        "corifeus-builder": "^1.7.1288-341"
     },
     "engines": {
         "node": ">=8.9.0"
