@@ -18,7 +18,7 @@ It will remove all ```mongodb*``` apt packages in ```./scripts/build-server.sh``
 
 It install the required apt dependencies and generates the ```SystemD``` service and makes it enabled.  
   
-Check if the build works (building is beloww). It runs all tests, so if it works, then it really does, actually. If there is an error, of course you will not deploy on your server, so if building and testing works then it puts the binaries as it follow. 
+Check if the build works (building is below). It runs all tests, so if it works, then it really does, actually. If there is an error, of course you will not deploy on your server, so if building and testing works then it puts the binaries as it follow. 
   
 For testing, you may build it in Docker, but the live building is on the server in the directory in the GIT repository ```build``` directory and then it puts the files into ```/usr/bin```.  
 
