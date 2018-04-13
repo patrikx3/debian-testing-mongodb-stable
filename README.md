@@ -49,7 +49,7 @@ git https://github.com/patrikx3/docker-debian-testing-mongodb-stable
 cd docker-debian-testing-mongodb-stable
 ```
 
-If below you get an error, please create and ```issue```, because it is possible I did not added a package, because my server was already there, but I will add in it for you for sure with ```apt```.  
+If below you get an error, please create and ```issue```, because it is possible I have not added a package, because my server was already there, but I will add in it for you for sure with ```apt```.  
 
 ### 1. Build MongoDB Server
 
