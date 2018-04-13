@@ -17,7 +17,7 @@ ENV FORCE_UNSAFE_CONFIGURE=1
 ENV SHELL=/bin/bash
 
 ARG MONGODB_BRANCH=v3.6
-ARG MONGODB_RELEASE=r3.6.3
+ARG MONGODB_RELEASE=r3.6.4
 
 ENV PATH="/build/install:/build/mongo:${PATH}"
 
@@ -27,8 +27,8 @@ RUN apt-get -y upgrade
 # libboost1.55-dev => libboost-dev
 # openjdk-8-jdk => openjdk-7-jdk
 # clang - might not needed
-RUN apt -y install man mc gcc python scons git glibc-source libssl-dev python-pip
-
+RUN apt -y install build-essential gcc python scons git glibc-source libssl-dev python-pip libffi-dev python-dev
+RUN pip install -U pip
 RUN mkdir build
 
 # clean up
@@ -42,6 +42,14 @@ WORKDIR /build
 RUN git clone -b ${MONGODB_BRANCH} https://github.com/mongodb/mongo.git
 WORKDIR /build/mongo
 RUN git checkout tags/${MONGODB_RELEASE}
+
+# hack to old version python pip cryptography from 1.7.2 to use the latest
+RUN sed -i 's#cryptography == 1.7.2#\#cryptography == 1.7.2#g' buildscripts/requirements.txt
+# this is only because 3.6.4 uses 1.7.2 and
+# https://github.com/pyca/cryptography/issues/4193#issuecomment-381236459
+# support minimum latest (2.2)
+RUN pip install cryptography
+
 
 RUN pip install -r buildscripts/requirements.txt
 RUN pip2 install --user regex

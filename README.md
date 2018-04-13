@@ -17,7 +17,9 @@ The current varsion is the r3.6.x build (release).
 It will remove all ```mongodb*``` apt packages in ```./scripts/build-server.sh``` and ```/etc/systemd/system/mongodb-server.service``` is replaced.  
 
 It install the required apt dependencies and generates the ```SystemD``` service and makes it enabled.  
-
+  
+Check if the build works (building is beloww). It runs all tests, so if it works, then it really does, actually. If there is an error, of course you will not deploy on your server, so if building and testing works then it puts the binaries as it follow. 
+  
 For testing, you may build it in Docker, but the live building is on the server in the directory in the GIT repository ```build``` directory and then it puts the files into ```/usr/bin```.  
 
 Before you start the database, but after the build, you are required to create a config, a skeleton is here:  
@@ -66,7 +68,7 @@ All defaults are in the config are the MongoDB uses:
 It generates everything, all you have to do:
 
 ```bash
-sudo ./scripts/build-server.sh r3.6.3
+sudo ./scripts/build-server.sh r3.6.4
 ```
 
 ### 2. Build MongoDB Tools
@@ -83,7 +85,7 @@ Then it puts all tools into the default Debian ```/usr/bin``` directories.
 
 The exact command is like:
 ```bash
-sudo ./scripts/build-tools.sh r3.6.3
+sudo ./scripts/build-tools.sh r3.6.4
 ```
 
 <!---
@@ -98,7 +100,7 @@ The command:
 
 It the kernel have changed, it better to re-build the server and the tools.
 
-Right now the stable MongoDB 3.6.3 doesn't show the kernel version anymore
+Right now the stable MongoDB 3.6.4 doesn't show the kernel version anymore
 
 <!---
 # Add user
@@ -120,7 +122,7 @@ service mongodb-server start
 
 ---
 
-[**P3X-DOCKER-DEBIAN-TESTING-MONGODB-STABLE**](https://pages.corifeus.com/docker-debian-testing-mongodb-stable) Build v3.6.172-134 
+[**P3X-DOCKER-DEBIAN-TESTING-MONGODB-STABLE**](https://pages.corifeus.com/docker-debian-testing-mongodb-stable) Build v3.6.177-143 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
 
