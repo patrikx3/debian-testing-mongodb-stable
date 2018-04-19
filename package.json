@@ -9,7 +9,7 @@
         "code": "MissOut"
     },
     "version": "3.6.179-153",
-    "description": "Debian Stretch / Buster / Bullseye / Testing MongoDB and MongoDB Tools build stable ",
+    "description": "✨ Debian Stretch / Buster / Bullseye / Testing MongoDB and MongoDB Tools build stable ",
     "main": "src/index.js",
     "directories": {
         "test": "test"
