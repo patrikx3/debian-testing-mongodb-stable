@@ -23,9 +23,9 @@ Check if the build works (building is below). It runs all tests, so if it works,
 For testing, you may build it in Docker, but the live building is on the server in the directory in the GIT repository ```build``` directory and then it puts the files into ```/usr/bin```.  
 
 Before you start the database, but after the build, you are required to create a config, a skeleton is here:  
-```artifacts/root-filesystem/etc/mongodb.conf```.
-
-Like:
+```text
+artifacts/root-filesystem/etc/mongodb.conf
+```
 
 
 #### Add safety to the mongodb config file
