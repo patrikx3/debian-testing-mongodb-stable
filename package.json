@@ -5,10 +5,10 @@
         "type": "build",
         "cdn": true,
         "nodejs": "v9.11.1",
-        "icon": "fa fa-database",
+        "icon": "fas fa-database",
         "code": "MissOut"
     },
-    "version": "3.6.179-153",
+    "version": "3.6.181-158",
     "description": "✨ Debian Stretch / Buster / Bullseye / Testing MongoDB and MongoDB Tools build stable ",
     "main": "src/index.js",
     "directories": {
@@ -40,7 +40,7 @@
     "author": "Patrik Laszlo <alabard@gmail.com>",
     "license": "MIT",
     "devDependencies": {
-        "corifeus-builder": "^1.7.1324-361"
+        "corifeus-builder": "^1.7.1328-363"
     },
     "engines": {
         "node": ">=8.9.0"
