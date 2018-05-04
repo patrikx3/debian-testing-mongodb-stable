@@ -4,11 +4,13 @@
         "prefix": "p3x-",
         "type": "build",
         "cdn": true,
-        "nodejs": "v9.11.1",
+        "nodejs": "v10.0.0",
         "icon": "fas fa-database",
-        "code": "MissOut"
+        "code": "MissOut",
+        "opencollective": false,
+        "reponame": "docker-debian-testing-mongodb-stable"
     },
-    "version": "3.6.183-159",
+    "version": "3.6.187-178",
     "description": "✨ Debian Stretch / Buster / Bullseye / Testing MongoDB and MongoDB Tools build stable ",
     "main": "src/index.js",
     "directories": {
@@ -40,7 +42,7 @@
     "author": "Patrik Laszlo <alabard@gmail.com>",
     "license": "MIT",
     "devDependencies": {
-        "corifeus-builder": "^1.7.1350-372"
+        "corifeus-builder": "^1.7.1372-390"
     },
     "engines": {
         "node": ">=8.9.0"

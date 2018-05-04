@@ -18,38 +18,20 @@ It will remove all ```mongodb*``` apt packages in ```./scripts/build-server.sh``
 
 It install the required apt dependencies and generates the ```SystemD``` service and makes it enabled.  
   
-Check if the build works (building is below). It runs all tests, so if it works, then it really does, actually. If there is an error, of course, you will not deploy on your server. So, if building and testing works, then it puts the binaries as it follow and you are sure and done. 
+Check, if the build works (building is below). It runs all tests, so if it works, then it really does, actually. If there is an error, of course, you will not deploy on your server. So, if building and testing works, then it puts the binaries as it follow and you are sure and done. 
   
 For testing, you may build it in Docker, but the live building is on the server in the directory in the GIT repository ```build``` directory and then it puts the files into ```/usr/bin```.  
 
-Before you start the database, but after the build, you are required to create a config, a skeleton is here:  
-```text
-artifacts/root-filesystem/etc/mongodb.conf
-```
+## Scripts for building
 
-
-#### Add safety to the mongodb config file
-
-```bash
-cp ./artifacts/root-filesystem/etc/mongodb.conf /etc/mongodb.conf
-chmod o-rwx /etc/mongodb.conf
-chown mongodb:mongodb /etc/mongodb.conf
-```
-
-After you created the config, you start the database like:  
-```service mongodb-server start```
-
-
-## Scripts
-
-It can work with sudo, but the best if you are ```root```. Of course, you can check the ```code```, there is no ```harm``` for sure!
+It can work with `sudo`, but the best if you are ```root```. Of course, you can check the ```code```, there is no ```harm``` for sure!
 
 ```bash
 git https://github.com/patrikx3/docker-debian-testing-mongodb-stable
 cd docker-debian-testing-mongodb-stable
 ```
 
-If below you get an error, please create and ```issue```, because it is possible I have not added a package, because my server was already there, but I will add in it for you for sure with ```apt```.  
+If below you get an error, please create an ```issue```, because it is possible, I have not added a package, because my server was already there, but I will add in it for you for sure with ```apt```.  
 
 ### 1. Build MongoDB Server
 
@@ -61,7 +43,7 @@ sudo ./scripts/build-server.sh
 From:  
 https://github.com/mongodb/mongo/wiki/Build-Mongodb-From-Source
 
-All defaults are in the config are the MongoDB uses:  
+All defaults are in the config, that MongoDB uses:  
 * /var/log/mongodb - log
 * /var/lib/mongodb - data
 
@@ -81,12 +63,33 @@ The command:
 It generates and install GoLang and builds the tools that you find them in:    
 https://github.com/mongodb/mongo-tools
 
-Then it puts all tools into the default Debian ```/usr/bin``` directories.
+Then, it puts all tools into the default Debian ```/usr/bin``` directories.
 
 The exact command is like:
 ```bash
 sudo ./scripts/build-tools.sh r3.6.4
 ```
+
+### 3. Start the services
+
+Before you start the database, **but after the build** , you are required to create a config (unless, you already have it), a skeleton is here:  
+```text
+artifacts/root-filesystem/etc/mongodb.conf
+```
+
+
+#### Add safety to the mongodb config file
+
+```bash
+sudo cp ./artifacts/root-filesystem/etc/mongodb.conf /etc/mongodb.conf
+sudo chmod o-rwx /etc/mongodb.conf
+sudo chown mongodb:mongodb /etc/mongodb.conf
+```
+
+After you created the config, you start the database like:  
+```service mongodb-server start```
+
+
 
 <!---
 
@@ -102,7 +105,6 @@ It the kernel have changed, it better to re-build the server and the tools.
 
 Right now the stable MongoDB 3.6.4 doesn't show the kernel version anymore
 
-<!---
 # Add user
 
 ```bash
@@ -122,7 +124,7 @@ service mongodb-server start
 
 ---
 
-[**P3X-DOCKER-DEBIAN-TESTING-MONGODB-STABLE**](https://pages.corifeus.com/docker-debian-testing-mongodb-stable) Build v3.6.183-159 
+[**P3X-DOCKER-DEBIAN-TESTING-MONGODB-STABLE**](https://pages.corifeus.com/docker-debian-testing-mongodb-stable) Build v3.6.187-178 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
 
