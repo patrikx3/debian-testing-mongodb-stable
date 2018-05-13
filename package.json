@@ -10,7 +10,7 @@
         "opencollective": false,
         "reponame": "docker-debian-testing-mongodb-stable"
     },
-    "version": "3.6.202-185",
+    "version": "3.6.204-186",
     "description": "✨ Debian Stretch / Buster / Bullseye / Testing MongoDB and MongoDB Tools build stable ",
     "main": "src/index.js",
     "directories": {
@@ -42,7 +42,7 @@
     "author": "Patrik Laszlo <alabard@gmail.com>",
     "license": "MIT",
     "devDependencies": {
-        "corifeus-builder": "^1.7.1392-405"
+        "corifeus-builder": "^1.7.1400-407"
     },
     "engines": {
         "node": ">=8.9.0"
