@@ -17,7 +17,7 @@ ENV FORCE_UNSAFE_CONFIGURE=1
 ENV SHELL=/bin/bash
 
 ARG MONGODB_BRANCH=v3.6
-ARG MONGODB_RELEASE=r3.6.4
+ARG MONGODB_RELEASE=r3.6.5
 
 ENV PATH="/build/install:/build/mongo:${PATH}"
 
@@ -45,7 +45,7 @@ RUN git checkout tags/${MONGODB_RELEASE}
 
 # hack to old version python pip cryptography from 1.7.2 to use the latest
 RUN sed -i 's#cryptography == 1.7.2#\#cryptography == 1.7.2#g' buildscripts/requirements.txt
-# this is only because 3.6.4 uses 1.7.2 and
+# this is only because 3.6.5 uses 1.7.2 and
 # https://github.com/pyca/cryptography/issues/4193#issuecomment-381236459
 # support minimum latest (2.2)
 RUN pip install cryptography

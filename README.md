@@ -50,7 +50,7 @@ All defaults are in the config, that MongoDB uses:
 It generates everything, all you have to do:
 
 ```bash
-sudo ./scripts/build-server.sh r3.6.4
+sudo ./scripts/build-server.sh r3.6.5
 ```
 
 ### 2. Build MongoDB Tools
@@ -67,7 +67,7 @@ Then, it puts all tools into the default Debian ```/usr/bin``` directories.
 
 The exact command is like:
 ```bash
-sudo ./scripts/build-tools.sh r3.6.4
+sudo ./scripts/build-tools.sh r3.6.5
 ```
 
 ### 3. Start the services
@@ -103,7 +103,7 @@ The command:
 
 It the kernel have changed, it better to re-build the server and the tools.
 
-Right now the stable MongoDB 3.6.4 doesn't show the kernel version anymore
+Right now the stable MongoDB 3.6.5 doesn't show the kernel version anymore
 
 # Add user
 
