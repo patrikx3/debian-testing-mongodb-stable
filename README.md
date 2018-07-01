@@ -10,7 +10,7 @@
 
 It is basically a built for the latest MongoDB for Debian.
 
-The current varsion is the r3.6.x build (release).
+The current varsion is the r4.1.x build (release).
 
 ### Warning
 
@@ -50,7 +50,7 @@ All defaults are in the config, that MongoDB uses:
 It generates everything, all you have to do:
 
 ```bash
-sudo ./scripts/build-server.sh r3.6.5
+sudo ./scripts/build-server.sh r4.1.0
 ```
 
 ### 2. Build MongoDB Tools
@@ -67,7 +67,7 @@ Then, it puts all tools into the default Debian ```/usr/bin``` directories.
 
 The exact command is like:
 ```bash
-sudo ./scripts/build-tools.sh r3.6.5
+sudo ./scripts/build-tools.sh r4.1.0
 ```
 
 ### 3. Start the services
@@ -103,7 +103,7 @@ The command:
 
 It the kernel have changed, it better to re-build the server and the tools.
 
-Right now the stable MongoDB 3.6.5 doesn't show the kernel version anymore
+Right now the stable MongoDB 4.1.0 doesn't show the kernel version anymore
 
 # Add user
 
@@ -124,7 +124,7 @@ service mongodb-server start
 
 ---
 
-[**P3X-DOCKER-DEBIAN-TESTING-MONGODB-STABLE**](https://pages.corifeus.com/docker-debian-testing-mongodb-stable) Build v3.6.213-198 
+[**P3X-DOCKER-DEBIAN-TESTING-MONGODB-STABLE**](https://pages.corifeus.com/docker-debian-testing-mongodb-stable) Build v4.1.5-207 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
 
