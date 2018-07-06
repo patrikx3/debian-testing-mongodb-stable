@@ -11,7 +11,7 @@
         "reponame": "docker-debian-testing-mongodb-stable",
         "build": true
     },
-    "version": "4.1.5-207",
+    "version": "4.0.5-207",
     "description": "✨ Debian Stretch / Buster / Bullseye / Testing MongoDB and MongoDB Tools build stable ",
     "main": "src/index.js",
     "directories": {
