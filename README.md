@@ -12,7 +12,7 @@ It is basically a built for the latest MongoDB for Debian.
 
 The current varsion is the r4.0.x build (release).
 
-There is a newer version `4.1.0`, but given we use `NoSQLBooster`, it only works with `4.0.0`.
+There is a newer version `4.1.0`, but given, we use `NoSQLBooster`, it only works with `4.0.0`.
 
 ### Warning
 
@@ -126,7 +126,7 @@ service mongodb-server start
 
 ---
 
-[**P3X-DOCKER-DEBIAN-TESTING-MONGODB-STABLE**](https://pages.corifeus.com/docker-debian-testing-mongodb-stable) Build v4.0.5-207 
+[**P3X-DOCKER-DEBIAN-TESTING-MONGODB-STABLE**](https://pages.corifeus.com/docker-debian-testing-mongodb-stable) Build v4.0.7-211 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
 
