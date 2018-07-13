@@ -1,6 +1,6 @@
 [//]: #@corifeus-header
 
-  [![Build Status](https://travis-ci.org/patrikx3/docker-debian-testing-mongodb-stable.svg?branch=master)](https://travis-ci.org/patrikx3/docker-debian-testing-mongodb-stable)  [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/patrikx3/docker-debian-testing-mongodb-stable/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/docker-debian-testing-mongodb-stable/?branch=master)  [![Code Coverage](https://scrutinizer-ci.com/g/patrikx3/docker-debian-testing-mongodb-stable/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/docker-debian-testing-mongodb-stable/?branch=master) 
+  [![Build Status](https://travis-ci.org/patrikx3/docker-debian-testing-mongodb-stable.svg?branch=master)](https://travis-ci.org/patrikx3/docker-debian-testing-mongodb-stable) 
 
 # ✨ Debian Stretch / Buster / Bullseye / Testing MongoDB and MongoDB Tools build stable 
 
@@ -126,7 +126,7 @@ service mongodb-server start
 
 ---
 
-[**P3X-DOCKER-DEBIAN-TESTING-MONGODB-STABLE**](https://pages.corifeus.com/docker-debian-testing-mongodb-stable) Build v4.0.8-215 
+[**P3X-DOCKER-DEBIAN-TESTING-MONGODB-STABLE**](https://pages.corifeus.com/docker-debian-testing-mongodb-stable) Build v4.0.10-217 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
 
