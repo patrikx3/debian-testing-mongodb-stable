@@ -10,7 +10,7 @@
 
 It is basically a built for the latest MongoDB for Debian.
 
-The current version is the r4.0.3 build (release).
+The current version is the r4.0.4 build (release).
 
 There is a newer version `4.1.0`, but given, we use `NoSQLBooster`, it only works with `4.0.0` and the `4.0.x` is the stable, the next stable will be `4.2.0`, `4.4.0` and so on...
 
@@ -52,7 +52,7 @@ All defaults are in the config, that MongoDB uses:
 It generates everything, all you have to do:
 
 ```bash
-sudo ./scripts/build-server.sh r4.0.3
+sudo ./scripts/build-server.sh r4.0.4
 ```
 
 ### 2. Build MongoDB Tools
@@ -69,7 +69,7 @@ Then, it puts all tools into the default Debian ```/usr/bin``` directories.
 
 The exact command is like:
 ```bash
-sudo ./scripts/build-tools.sh r4.0.3
+sudo ./scripts/build-tools.sh r4.0.4
 ```
 
 ### 3. Start the services
