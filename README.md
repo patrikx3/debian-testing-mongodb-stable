@@ -29,7 +29,7 @@ For testing, you may build it in Docker, but the live building is on the server 
 It can work with `sudo`, but the best if you are ```root```. Of course, you can check the ```code```, there is no ```harm``` for sure!
 
 ```bash
-git https://github.com/patrikx3/docker-debian-testing-mongodb-stable
+git clone https://github.com/patrikx3/docker-debian-testing-mongodb-stable
 cd docker-debian-testing-mongodb-stable
 ```
 
@@ -89,7 +89,7 @@ sudo chown mongodb:mongodb /etc/mongodb.conf
 ```
 
 After you created the config, you start the database like:  
-```service mongodb-server start```
+```service mongodb-server start``` or ```service mongodb-server restart```
 
 
 
