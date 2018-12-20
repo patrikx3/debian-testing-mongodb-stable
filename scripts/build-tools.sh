@@ -33,8 +33,11 @@ MONGODB_RELEASE="${1}"
 
 apt -y install golang libpcap-dev
 
+export GOROOT=$(go env GOROOT)
+
+
 # generate build directory variable
-BUILD=$DIR/../build
+BUILD=$DIR/../build/src/github.com/mongodb/
 
 # delete previous build directory
 rm -rf $BUILD/mongo-tools
