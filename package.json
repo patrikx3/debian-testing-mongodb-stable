@@ -4,15 +4,15 @@
         "prefix": "p3x-",
         "type": "build",
         "cdn": true,
-        "nodejs": "v11.6.0",
+        "nodejs": "v11.7.0",
         "icon": "fas fa-database",
         "code": "MissOut",
         "opencollective": false,
         "reponame": "docker-debian-testing-mongodb-stable",
         "build": true
     },
-    "version": "2019.1.9-1",
-    "description": "✨ Debian Stretch / Buster / Bullseye / Testing MongoDB and MongoDB Tools build stable ",
+    "version": "2019.1.19-1",
+    "description": "✨ Debian Buster / Bullseye / SID / Testing MongoDB and MongoDB Tools build stable ",
     "main": "src/index.js",
     "directories": {
         "test": "test"
@@ -43,7 +43,7 @@
     "author": "Patrik Laszlo <alabard@gmail.com>",
     "license": "MIT",
     "devDependencies": {
-        "corifeus-builder": "^2019.1.9-1"
+        "corifeus-builder": "^2019.1.19-1"
     },
     "engines": {
         "node": ">=10.13.0"

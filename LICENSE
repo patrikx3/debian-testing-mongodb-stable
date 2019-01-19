@@ -1,7 +1,7 @@
 
-@license p3x-docker-debian-testing-mongodb-stable v2019.1.9-1
+@license p3x-docker-debian-testing-mongodb-stable v2019.1.19-1
   
-✨ Debian Stretch / Buster / Bullseye / Testing MongoDB and MongoDB Tools build stable 
+✨ Debian Buster / Bullseye / SID / Testing MongoDB and MongoDB Tools build stable 
 
 https://pages.corifeus.com/docker-debian-testing-mongodb-stable
 
