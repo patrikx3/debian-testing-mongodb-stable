@@ -11,8 +11,8 @@
         "reponame": "docker-debian-testing-mongodb-stable",
         "build": true
     },
-    "version": "2019.2.15-1",
-    "description": "✨ Debian Buster / Bullseye / SID / Testing MongoDB and MongoDB Tools build stable ",
+    "version": "2019.2.24-2",
+    "description": "✨ Debian Buster / Bullseye / Bookworm / Testing / SID MongoDB and MongoDB Tools build stable ",
     "main": "src/index.js",
     "directories": {
         "test": "test"
@@ -43,7 +43,7 @@
     "author": "Patrik Laszlo <alabard@gmail.com>",
     "license": "MIT",
     "devDependencies": {
-        "corifeus-builder": "^2019.2.15-1"
+        "corifeus-builder": "^2019.2.24-3"
     },
     "engines": {
         "node": ">=10.13.0"
