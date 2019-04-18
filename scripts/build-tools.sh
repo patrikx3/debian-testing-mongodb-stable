@@ -9,7 +9,7 @@ set -e
 
 # some info
 echo
-echo "Works like command: sudo ./scripts/build-tools.sh r4.0.8"
+echo "Works like command: sudo ./scripts/build-tools.sh r4.0.9"
 echo
 
 # check if we are root
@@ -20,7 +20,7 @@ fi
 
 # require mongo release
 if [ -z "${1}" ]; then
-    echo "The first argument must be the MONGODB_RELEASE for example 'r4.0.8'"
+    echo "The first argument must be the MONGODB_RELEASE for example 'r4.0.9'"
     exit 1
 fi
 MONGODB_RELEASE="${1}"
