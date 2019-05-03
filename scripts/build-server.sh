@@ -89,7 +89,8 @@ pushd $BUILD
         pip install cryptography
 
         # install the python requirements
-        pip install -r etc/pip/dev-requirements.txt
+        #pip install -r etc/pip/dev-requirements.txt
+        pip install -r buildscripts/requirements.txt
 
         # somewhere in the build it says if we install this, it is faster to build
         pip2 install --user regex
