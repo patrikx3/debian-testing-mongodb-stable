@@ -55,6 +55,8 @@ It generates everything, all you have to do:
 
 ```bash
 sudo ./scripts/build-server.sh r4.0.10
+# if you want to specify how many cores you wanna use do like
+sudo CORES=4 ./scripts/build-server.sh r4.0.10
 ```
 
 ### 2. Build MongoDB Tools
