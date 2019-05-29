@@ -12,7 +12,7 @@
 
 It is basically a built for the latest MongoDB for Debian.
 
-The current version is the r4.0.9 build (release).
+The current version is the r4.0.10 build (release).
 
 There is a newer version `4.1.0`, but given, we use `NoSQLBooster`, it only works with `4.0.0` and the `4.0.x` is the stable, the next stable will be `4.2.0`, `4.4.0` and so on...
 
@@ -54,7 +54,7 @@ All defaults are in the config, that MongoDB uses:
 It generates everything, all you have to do:
 
 ```bash
-sudo ./scripts/build-server.sh r4.0.9
+sudo ./scripts/build-server.sh r4.0.10
 ```
 
 ### 2. Build MongoDB Tools
@@ -71,7 +71,7 @@ Then, it puts all tools into the default Debian ```/usr/bin``` directories.
 
 The exact command is like:
 ```bash
-sudo ./scripts/build-tools.sh r4.0.9
+sudo ./scripts/build-tools.sh r4.0.10
 ```
 
 ### 3. Start the services
@@ -128,7 +128,7 @@ service mongodb-server start
 
 ---
 
-[**P3X-DOCKER-DEBIAN-TESTING-MONGODB-STABLE**](https://pages.corifeus.com/docker-debian-testing-mongodb-stable) Build v2019.4.102 
+[**P3X-DOCKER-DEBIAN-TESTING-MONGODB-STABLE**](https://pages.corifeus.com/docker-debian-testing-mongodb-stable) Build v2019.4.103 
 
 [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) 
 
