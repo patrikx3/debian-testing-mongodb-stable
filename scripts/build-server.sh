@@ -61,7 +61,10 @@ mkdir -p $BUILD
 ROOT_FS=$DIR/../artifacts/root-filesystem
 
 # find out how many cores we have and we use that many
-CORES=$(grep -c ^processor /proc/cpuinfo)
+if [ -z "$CORES" ]; then
+    CORES=$(grep -c ^processor /proc/cpuinfo)
+fi
+echo Using $CORES cores
 
 # go to the build directory
 pushd $BUILD
