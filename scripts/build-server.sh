@@ -10,7 +10,7 @@ set -e
 # some info
 echo
 #echo "Works like command, use a tag: sudo ./scripts/build-server.sh r4.2.0"
-echo "Works like command, use a tag: sudo ./scripts/build-server.sh r4.0.10"
+echo "Works like command, use a tag: sudo ./scripts/build-server.sh r4.0.11"
 echo
 
 # check if we are root
@@ -35,7 +35,7 @@ fi
 
 # require mongo release
 if [ -z "${1}" ]; then
-    echo "The first argument must be the MONGODB_RELEASE for example 'r4.0.10'"
+    echo "The first argument must be the MONGODB_RELEASE for example 'r4.0.11'"
     exit 1
 fi
 MONGODB_RELEASE="${1}"
@@ -44,7 +44,7 @@ MONGODB_RELEASE="${1}"
 apt remove --purge mongo*
 
 # the required packages for debian
-apt -y install libboost-filesystem-dev libboost-program-options-dev libboost-system-dev libboost-thread-dev build-essential gcc python scons git glibc-source libssl-dev python-pip libffi-dev python-dev libcurl4-openssl-dev #libcurl-dev 
+apt -y install libboost-filesystem-dev libboost-program-options-dev libboost-system-dev libboost-thread-dev build-essential gcc python scons git glibc-source libssl-dev python-pip libffi-dev python-dev libcurl4-openssl-dev #libcurl-dev
 pip install -U pip pyyaml typing
 
 
@@ -86,7 +86,7 @@ pushd $BUILD
 
         # hack to old version python pip cryptography from 1.7.2 to use the latest
         sed -i 's#cryptography == 1.7.2#\#cryptography == 1.7.2#g' buildscripts/requirements.txt
-        # this is only because 4.0.10 uses 1.7.2 and
+        # this is only because 4.0.11 uses 1.7.2 and
         # https://github.com/pyca/cryptography/issues/4193#issuecomment-381236459
         # support minimum latest (2.2)
         pip install cryptography
