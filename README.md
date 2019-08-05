@@ -11,7 +11,9 @@
 [//]: #@corifeus-header:end
 
 It is basically a built for the latest MongoDB for Debian.
-
+  
+**Unfortunately, I never tested it on any other architecture, but `x64`, so, it is possible it will not build other CPU types. [See this link.](https://docs.mongodb.com/manual/installation/#mongodb-supported-platforms)**
+  
 The current version is the r4.0.11 build (release).
 
 There is a newer version `4.1.0`, but given, we use `NoSQLBooster`, it only works with `4.0.0` and the `4.0.x` is the stable, the next stable will be `4.2.0`, `4.4.0` and so on...
