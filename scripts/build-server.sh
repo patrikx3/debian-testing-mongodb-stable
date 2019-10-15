@@ -10,7 +10,7 @@ set -e
 # some info
 echo
 #echo "Works like command, use a tag: sudo ./scripts/build-server.sh r4.2.0"
-echo "Works like command, use a tag: sudo ./scripts/build-server.sh r4.0.12"
+echo "Works like command, use a tag: sudo ./scripts/build-server.sh r4.0.13"
 echo
 
 # check if we are root
@@ -35,7 +35,7 @@ fi
 
 # require mongo release
 if [ -z "${1}" ]; then
-    echo "The first argument must be the MONGODB_RELEASE for example 'r4.0.12'"
+    echo "The first argument must be the MONGODB_RELEASE for example 'r4.0.13'"
     exit 1
 fi
 MONGODB_RELEASE="${1}"
@@ -86,7 +86,7 @@ pushd $BUILD
 
         # hack to old version python pip cryptography from 1.7.2 to use the latest
         sed -i 's#cryptography == 1.7.2#\#cryptography == 1.7.2#g' buildscripts/requirements.txt
-        # this is only because 4.0.12 uses 1.7.2 and
+        # this is only because 4.0.13 uses 1.7.2 and
         # https://github.com/pyca/cryptography/issues/4193#issuecomment-381236459
         # support minimum latest (2.2)
         pip install cryptography
