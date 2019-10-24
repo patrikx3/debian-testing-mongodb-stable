@@ -28,7 +28,7 @@ fi
 
 # require mongo release
 #if [ -z "${2}" ]; then
-#    echo "The second argument must be the MONGODB_RELEASE for example 'r4.1.0'"
+#    echo "The second argument must be the MONGODB_RELEASE for example 'r4.0.13'"
 #    exit 1
 #fi
 #MONGODB_RELEASE="${2}"
