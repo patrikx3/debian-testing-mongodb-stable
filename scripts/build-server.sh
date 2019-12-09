@@ -10,7 +10,7 @@ set -e
 # some info
 echo
 #echo "Works like command, use a tag: sudo ./scripts/build-server.sh r4.2.0"
-echo "Works like command, use a tag: sudo ./scripts/build-server.sh r4.0.13"
+echo "Works like command, use a tag: sudo ./scripts/build-server.sh r4.2.2"
 echo
 
 # check if we are root
@@ -28,14 +28,14 @@ fi
 
 # require mongo release
 #if [ -z "${2}" ]; then
-#    echo "The second argument must be the MONGODB_RELEASE for example 'r4.0.13'"
+#    echo "The second argument must be the MONGODB_RELEASE for example 'r4.2.2'"
 #    exit 1
 #fi
 #MONGODB_RELEASE="${2}"
 
 # require mongo release
 if [ -z "${1}" ]; then
-    echo "The first argument must be the MONGODB_RELEASE for example 'r4.0.13'"
+    echo "The first argument must be the MONGODB_RELEASE for example 'r4.2.2'"
     exit 1
 fi
 MONGODB_RELEASE="${1}"
@@ -44,8 +44,8 @@ MONGODB_RELEASE="${1}"
 apt remove --purge mongo*
 
 # the required packages for debian
-apt -y install libboost-filesystem-dev libboost-program-options-dev libboost-system-dev libboost-thread-dev build-essential gcc python scons git glibc-source libssl-dev python-pip libffi-dev python-dev libcurl4-openssl-dev #libcurl-dev
-pip install -U pip pyyaml typing
+apt -y install libboost-filesystem-dev libboost-program-options-dev libboost-system-dev libboost-thread-dev build-essential gcc python scons git glibc-source libssl-dev python3-pip libffi-dev python3-dev libcurl4-openssl-dev libssl-dev
+pip3 install -U pip pyyaml typing
 
 
 # generate build directory variable
@@ -85,24 +85,25 @@ pushd $BUILD
         git checkout tags/${MONGODB_RELEASE}
 
         # hack to old version python pip cryptography from 1.7.2 to use the latest
-        sed -i 's#cryptography == 1.7.2#\#cryptography == 1.7.2#g' buildscripts/requirements.txt
-        # this is only because 4.0.13 uses 1.7.2 and
+        # sed -i 's#cryptography == 1.7.2#\#cryptography == 1.7.2#g' buildscripts/requirements.txt
+        # this is only because 4.2.2 uses 1.7.2 and
         # https://github.com/pyca/cryptography/issues/4193#issuecomment-381236459
         # support minimum latest (2.2)
-        pip install cryptography
+        pip3 install cryptography
 
         # install the python requirements
         #pip install -r etc/pip/dev-requirements.txt
-        pip install -r buildscripts/requirements.txt
+        pip3 install -r etc/pip/dev-requirements.txt
 
         # somewhere in the build it says if we install this, it is faster to build
-        pip2 install --user regex
+        pip3 install --user regex
 
         # build everything
-        scons all --disable-warnings-as-errors -j $CORES --ssl
+        buildscripts/scons.py all --disable-warnings-as-errors -j $CORES --ssl
+        #buildscripts/scons.py core --disable-warnings-as-errors -j $CORES --ssl
 
         # install the mongo programs all
-        scons install --disable-warnings-as-errors -j $CORES --prefix /usr
+        buildscripts/scons.py install --disable-warnings-as-errors -j $CORES --prefix /usr
 
         # create a copy of the old config
         #TIMESTAMP=$(($(date +%s%N)/1000000))
