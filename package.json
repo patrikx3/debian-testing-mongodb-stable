@@ -11,8 +11,8 @@
         "reponame": "docker-debian-testing-mongodb-stable",
         "build": true
     },
-    "version": "2019.10.142",
-    "description": "✨ Debian Buster / Bullseye / Bookworm / Testing / SID MongoDB and MongoDB Tools build stable ",
+    "version": "2019.10.143",
+    "description": "✨ Debian Bullseye / Bookworm / Testing / SID MongoDB and MongoDB Tools build stable ",
     "main": "src/index.js",
     "directories": {
         "test": "test"
