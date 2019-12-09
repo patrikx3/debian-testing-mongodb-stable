@@ -41,6 +41,8 @@ cd docker-debian-testing-mongodb-stable
 
 If below you get an error, please create an ```issue```, because it is possible, I have not added a package, because my server was already there, but I will add in it for you for sure with ```apt```.  
 
+The default jobs for building is by the number of threads in the cpu, but you can override as a `CORES` variable. 
+
 ### 1. Build MongoDB Server
 
 The command:
