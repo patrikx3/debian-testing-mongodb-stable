@@ -99,8 +99,8 @@ pushd $BUILD
         pip3 install --user regex
 
         # build everything
-        buildscripts/scons.py all --disable-warnings-as-errors -j $CORES --ssl
-        #buildscripts/scons.py core --disable-warnings-as-errors -j $CORES --ssl
+        #buildscripts/scons.py all --disable-warnings-as-errors -j $CORES --ssl
+        buildscripts/scons.py core --disable-warnings-as-errors -j $CORES --ssl
 
         # install the mongo programs all
         buildscripts/scons.py install --disable-warnings-as-errors -j $CORES --prefix /usr
