@@ -14,7 +14,7 @@ It is basically a built for the latest MongoDB for Debian.
   
 **Unfortunately, I never tested it on any other architecture, but `x64`, so, it is possible it will not build other CPU types. [See this link.](https://docs.mongodb.com/manual/installation/#mongodb-supported-platforms)**
   
-The current version is the r4.2.2 build (release).
+The current version is the r4.2.2 build (https://docs.mongodb.com/manual/release-notes/).
 
 There is a newer version `4.3.0`, but given, we use `NoSQLBooster`, it only works with `4.2.0` and the `4.2.x` is the stable, the next stable will be `4.4.0`, `4.6.0` and so on...
 
