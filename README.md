@@ -22,11 +22,13 @@ There is a newer version `4.3.0`, but given, we use `NoSQLBooster`, it only work
 
 It will remove all ```mongodb*``` apt packages in ```./scripts/build-server.sh``` and ```/etc/systemd/system/mongodb-server.service``` is replaced.  
 
-It install the required apt dependencies and generates the ```SystemD``` service and makes it enabled.  
+It installs the required `apt` dependencies and generates the ```SystemD``` service and makes it enabled.  
   
-Check, if the build works (building is below). If there is an error, of course, you will not deploy on your server. So, if building, then it puts the binaries as it follows and you are done. 
+Check, if the build works (building is below). If there is an error, of course, you will not deploy on your server. But, if it builds, then it puts the binaries into `/usr/bin` and you are done. You might want to create a backup first, but I never had an error to make the database into an unstable state. 
   
-For testing, you may build it in Docker, but the live building is on the server in the directory in the GIT repository ```build``` directory and then it puts the files into ```/usr/bin```.  
+There was a Docker file to build in a container, but it was slower and I deprecated.
+  
+Before, the script was building everything including unit tests, but it took so long, so I left it out, now, it can build on a 4/8 cores/threads Intel 7700k in 1-2 hours.
 
 ## Scripts for building
 
