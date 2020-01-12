@@ -1,11 +1,11 @@
 
-@license p3x-docker-debian-testing-mongodb-stable v2019.10.143
+@license p3x-docker-debian-testing-mongodb-stable v2020.4.101
   
 ✨ Debian Bullseye / Bookworm / Testing / SID MongoDB and MongoDB Tools build stable 
 
 https://pages.corifeus.com/docker-debian-testing-mongodb-stable
 
-Copyright (c) 2019 Patrik Laszlo / P3X / Corifeus and contributors.
+Copyright (c) 2020 Patrik Laszlo / P3X / Corifeus and contributors.
 
 MIT License
 

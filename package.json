@@ -4,14 +4,14 @@
         "prefix": "p3x-",
         "type": "build",
         "cdn": true,
-        "nodejs": "v12.13.1",
+        "nodejs": "v12.14.1",
         "icon": "fas fa-database",
         "code": "MissOut",
         "opencollective": false,
         "reponame": "docker-debian-testing-mongodb-stable",
         "build": true
     },
-    "version": "2019.10.143",
+    "version": "2020.4.101",
     "description": "✨ Debian Bullseye / Bookworm / Testing / SID MongoDB and MongoDB Tools build stable ",
     "main": "src/index.js",
     "directories": {
@@ -43,10 +43,10 @@
     "author": "Patrik Laszlo <alabard@gmail.com>",
     "license": "MIT",
     "devDependencies": {
-        "corifeus-builder": "^2019.10.256"
+        "corifeus-builder": "^2020.4.101"
     },
     "engines": {
-        "node": ">=10.16.0"
+        "node": ">=12.13.0"
     },
     "homepage": "https://pages.corifeus.com/docker-debian-testing-mongodb-stable",
     "dependencies": {}
