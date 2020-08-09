@@ -12,23 +12,12 @@
 
 It is basically a built for the latest MongoDB for Debian.
   
-**Unfortunately, I never tested it on any other architecture, but `x64`, so, it is possible it will not build other CPU types. [See this link.](https://docs.mongodb.com/manual/installation/#mongodb-supported-platforms)**
+This is for `x64` only.
   
-The current version is the r4.2.8 build (https://docs.mongodb.com/manual/release-notes/).
+The current version is the r4.4.0 build (https://docs.mongodb.com/manual/release-notes/).
 
-There is a newer version `4.3.0`, but given, we use `NoSQLBooster`, it only works with `4.2.0` and the `4.2.x` is the stable, the next stable will be `4.4.0`, `4.6.0` and so on...
+There is a newer version `4.5.0`, but given, we use `NoSQLBooster`, it only works with `4.4.0` and the `4.4.x` is the stable, the next stable will be `4.6.0`, `4.8.0` and so on...
 
-### Warning
-
-It will remove all ```mongodb*``` apt packages in ```./scripts/build-server.sh``` and ```/etc/systemd/system/mongodb-server.service``` is replaced.  
-
-It installs the required `apt` dependencies and generates the ```SystemD``` service and makes it enabled.  
-  
-Check, if the build works (building is below). If there is an error, of course, you will not deploy on your server. But, if it builds, then it puts the binaries into `/usr/bin` and you are done. You might want to create a backup first, but I never had an error to make the database into an unstable state. 
-  
-There was a Docker file to build in a container, but it was slower and I deprecated.
-  
-Before, the script was building everything including unit tests, but it took so long, so I left it out, now, it can build on a 4/8 cores/threads Intel 7700k in 1-2 hours.
 
 ## Scripts for building
 
@@ -39,31 +28,20 @@ git clone https://github.com/patrikx3/docker-debian-testing-mongodb-stable
 cd docker-debian-testing-mongodb-stable
 ```
 
-If below you get an error, please create an ```issue```, because it is possible, I have not added a package, because my server was already there, but I will add in it for you for sure with ```apt```.  
-
-The default jobs for building is by the number of threads in the cpu, but you can override as a `CORES` variable. 
+It downloads the specified version and deploy on your server. 
 
 ### 1. Build MongoDB Server
 
 The command:
 ```bash
-sudo ./scripts/build-server.sh
+sudo ./scripts/build-server.sh 4.4.0
 ```
-
-From:  
-https://github.com/mongodb/mongo/wiki/Build-Mongodb-From-Source
 
 All defaults are in the config, that MongoDB uses:  
 * /var/log/mongodb - log
 * /var/lib/mongodb - data
 
-It generates everything, all you have to do:
-
-```bash
-sudo ./scripts/build-server.sh r4.2.8
-# if you want to specify how many cores you wanna use do like
-sudo CORES=4 ./scripts/build-server.sh r4.2.8
-```
+It generates everything, all you have to do as the script says.
 
 ### 2. Build MongoDB Tools
 
@@ -79,7 +57,7 @@ Then, it puts all tools into the default Debian ```/usr/bin``` directories.
 
 The exact command is like:
 ```bash
-sudo ./scripts/build-tools.sh r4.2.8
+sudo ./scripts/build-tools.sh r4.3.2
 ```
 
 ### 3. Start the services

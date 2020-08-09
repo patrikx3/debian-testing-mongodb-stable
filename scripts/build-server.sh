@@ -8,10 +8,9 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 set -e
 
 # some info
-echo
-#echo "Works like command, use a tag: sudo ./scripts/build-server.sh r4.2.0"
-echo "Works like command, use a tag: sudo ./scripts/build-server.sh r4.2.8"
-echo
+#echo
+#echo "Works like command, use a tag: sudo ./scripts/build-server.sh r4.4.0"
+#echo
 
 # check if we are root
 if [[ $EUID -ne 0 ]]; then
@@ -28,25 +27,22 @@ fi
 
 # require mongo release
 #if [ -z "${2}" ]; then
-#    echo "The second argument must be the MONGODB_RELEASE for example 'r4.2.8'"
+#    echo "The second argument must be the MONGODB_RELEASE for example 'r4.4.0'"
 #    exit 1
 #fi
 #MONGODB_RELEASE="${2}"
 
 # require mongo release
 if [ -z "${1}" ]; then
-    echo "The first argument must be the MONGODB_RELEASE for example 'r4.2.8'"
+    echo "The first argument must be the MONGODB_RELEASE for example '4.4.0'"
     exit 1
 fi
 MONGODB_RELEASE="${1}"
 
 # delete all mongo other programs, we self compile
-apt remove --purge mongo* || true
+#apt remove --purge mongo* || true
 
 # the required packages for debian
-apt -y install libboost-filesystem-dev libboost-program-options-dev libboost-system-dev libboost-thread-dev build-essential gcc python scons git glibc-source libssl-dev python3-pip libffi-dev python3-dev libcurl4-openssl-dev libssl-dev
-pip3 install -U pip pyyaml typing
-
 
 # generate build directory variable
 BUILD=$DIR/../build
@@ -61,10 +57,10 @@ mkdir -p $BUILD
 ROOT_FS=$DIR/../artifacts/root-filesystem
 
 # find out how many cores we have and we use that many
-if [ -z "$CORES" ]; then
-    CORES=$(grep -c ^processor /proc/cpuinfo)
-fi
-echo Using $CORES cores
+#if [ -z "$CORES" ]; then
+#    CORES=$(grep -c ^processor /proc/cpuinfo)
+#fi
+#echo Using $CORES cores
 
 # go to the build directory
 pushd $BUILD
@@ -73,37 +69,39 @@ pushd $BUILD
     #git clone -b ${MONGODB_BRANCH} https://github.com/mongodb/mongo.git
 
     # clone the mongo by branch
-    git clone https://github.com/mongodb/mongo.git
+    #git clone https://github.com/mongodb/mongo.git
 
     # the mongo directory is a variables
-    MONGO=$BUILD/mongo
+    #MONGO=$BUILD/mongo
 
     # go to the mongo directory
-    pushd $MONGO
+    #pushd $MONGO
 
         # checkout the mongo release
-        git checkout tags/${MONGODB_RELEASE}
+#        git checkout tags/${MONGODB_RELEASE}
 
         # hack to old version python pip cryptography from 1.7.2 to use the latest
         # sed -i 's#cryptography == 1.7.2#\#cryptography == 1.7.2#g' buildscripts/requirements.txt
-        # this is only because 4.2.8 uses 1.7.2 and
+        # this is only because 4.4.0 uses 1.7.2 and
         # https://github.com/pyca/cryptography/issues/4193#issuecomment-381236459
         # support minimum latest (2.2)
-        pip3 install cryptography
+        #pip3 install cryptography
 
         # install the python requirements
         #pip install -r etc/pip/dev-requirements.txt
-        pip3 install -r etc/pip/dev-requirements.txt
+        #pip3 install -r etc/pip/dev-requirements.txt
+#        python3 -m pip install -r etc/pip/compile-requirements.txt
+
 
         # somewhere in the build it says if we install this, it is faster to build
-        pip3 install --user regex
+        #pip3 install --user regex
 
         # build everything
         #buildscripts/scons.py all --disable-warnings-as-errors -j $CORES --ssl
-        buildscripts/scons.py core --disable-warnings-as-errors -j $CORES --ssl
+#        python3 buildscripts/scons.py install-core --disable-warnings-as-errors -j $CORES --ssl
 
         # install the mongo programs all
-        buildscripts/scons.py install --disable-warnings-as-errors -j $CORES --prefix /usr
+        #buildscripts/scons.py install --disable-warnings-as-errors -j $CORES --prefix /usr
 
         # create a copy of the old config
         #TIMESTAMP=$(($(date +%s%N)/1000000))
@@ -112,6 +110,13 @@ pushd $BUILD
         # copy the mongodb.conf configured and the systemd service file
         # dangerous!!! removed
         # cp -avr $ROOT_FS/. /
+        MONGO_FILENAME=mongodb-linux-x86_64-debian10-${MONGODB_RELEASE}
+        MONGO_FILENAME_TGZ=${MONGO_FILENAME}.tgz
+        wget https://fastdl.mongodb.org/linux/$MONGO_FILENAME_TGZ
+        tar zxvf $MONGO_FILENAME_TGZ
+        pushd $MONGO_FILENAME
+            cp -R ./bin/* /usr/bin
+        popd
 
         MONGODB_SERVICE=etc/systemd/system/mongodb-server.service
         cp $ROOT_FS/$MONGODB_SERVICE /$MONGODB_SERVICE
@@ -150,7 +155,7 @@ pushd $BUILD
         #service mongodb-server start
 
     # exit of the mongo directory
-    popd
+#    popd
 
 # exit the build directory
 popd
