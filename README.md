@@ -14,9 +14,9 @@ It is basically a built for the latest MongoDB for Debian.
   
 This is for `x64` only.
   
-The current version is the r4.4.0 build (https://docs.mongodb.com/manual/release-notes/).
+The current version is the r4.4.1 build (https://docs.mongodb.com/manual/release-notes/).
 
-There is a newer version `4.5.0`, but given, we use `NoSQLBooster`, it only works with `4.4.0` and the `4.4.x` is the stable, the next stable will be `4.6.0`, `4.8.0` and so on...
+There is a newer version `4.5.0`, but given, we use `NoSQLBooster`, it only works with `4.4.1` and the `4.4.x` is the stable, the next stable will be `4.6.0`, `4.8.0` and so on...
 
 
 ## Scripts for building
@@ -34,7 +34,7 @@ It downloads the specified version and deploy on your server.
 
 The command:
 ```bash
-sudo ./scripts/build-server.sh 4.4.0
+sudo ./scripts/build-server.sh 4.4.1
 ```
 
 All defaults are in the config, that MongoDB uses:  
@@ -125,7 +125,7 @@ All my domains ([patrikx3.com](https://patrikx3.com) and [corifeus.com](https://
 
 ---
 
-[**P3X-DOCKER-DEBIAN-TESTING-MONGODB-STABLE**](https://corifeus.com/docker-debian-testing-mongodb-stable) Build v2020.10.107
+[**P3X-DOCKER-DEBIAN-TESTING-MONGODB-STABLE**](https://corifeus.com/docker-debian-testing-mongodb-stable) Build v2020.10.109
 
 [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software)
 
