@@ -31,10 +31,11 @@ cd docker-debian-testing-mongodb-stable
 It downloads the specified version and deploy on your server. 
 
 ### 1. Build MongoDB Server
+First stop the database server.
 
 The command:
 ```bash
-sudo ./scripts/build-server.sh 4.4.1
+sudo ./scripts/build-server.sh 4.4.2
 ```
 
 All defaults are in the config, that MongoDB uses:  
@@ -42,6 +43,8 @@ All defaults are in the config, that MongoDB uses:
 * /var/lib/mongodb - data
 
 It generates everything, all you have to do as the script says.
+
+Now, you can start again the MongoDB server.
 
 ### 2. Build MongoDB Tools
 
