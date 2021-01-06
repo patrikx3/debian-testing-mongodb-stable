@@ -60,7 +60,7 @@ Then, it puts all tools into the default Debian ```/usr/bin``` directories.
 
 The exact command is like:
 ```bash
-sudo ./scripts/build-tools.sh r4.4.3
+sudo ./scripts/build-tools.sh r4.3.2
 ```
 
 ### 3. Start the services
