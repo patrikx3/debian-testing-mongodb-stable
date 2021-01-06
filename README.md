@@ -35,7 +35,7 @@ First stop the database server.
 
 The command:
 ```bash
-sudo ./scripts/build-server.sh 4.4.2
+sudo ./scripts/build-server.sh 4.4.3
 ```
 
 All defaults are in the config, that MongoDB uses:  
@@ -60,7 +60,7 @@ Then, it puts all tools into the default Debian ```/usr/bin``` directories.
 
 The exact command is like:
 ```bash
-sudo ./scripts/build-tools.sh r4.3.2
+sudo ./scripts/build-tools.sh r4.4.3
 ```
 
 ### 3. Start the services
