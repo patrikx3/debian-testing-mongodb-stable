@@ -36,7 +36,7 @@ First stop the database server.
 
 The command:
 ```bash
-sudo ./scripts/build-server.sh 4.4.3
+sudo ./scripts/build-server.sh 4.4.4
 ```
 
 All defaults are in the config, that MongoDB uses:  
