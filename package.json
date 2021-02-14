@@ -1,5 +1,5 @@
 {
-    "name": "p3x-docker-debian-testing-mongodb-stable",
+    "name": "p3x-debian-testing-mongodb-stable",
     "corifeus": {
         "prefix": "p3x-",
         "type": "build",
@@ -8,10 +8,10 @@
         "icon": "fas fa-database",
         "code": "MissOut",
         "opencollective": false,
-        "reponame": "docker-debian-testing-mongodb-stable",
+        "reponame": "debian-testing-mongodb-stable",
         "build": true
     },
-    "version": "2021.4.106",
+    "version": "2021.4.107",
     "description": "✨ Debian Bullseye / Bookworm / Testing / SID MongoDB and MongoDB Tools build stable ",
     "main": "src/index.js",
     "directories": {
@@ -48,6 +48,6 @@
     "engines": {
         "node": ">=12.13.0"
     },
-    "homepage": "https://corifeus.com/docker-debian-testing-mongodb-stable",
+    "homepage": "https://corifeus.com/debian-testing-mongodb-stable",
     "dependencies": {}
 }
