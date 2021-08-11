@@ -15,9 +15,9 @@ It is basically a built for the latest MongoDB for Debian.
   
 This is for `x64` only.
   
-The current version is the r4.4.1 build (https://docs.mongodb.com/manual/release-notes/).
+The current version is the r4.4.8 build (https://docs.mongodb.com/manual/release-notes/).
 
-There is a newer version `4.5.0`, but given, we use `NoSQLBooster`, it only works with `4.4.1` and the `4.4.x` is the stable, the next stable will be `4.6.0`, `4.8.0` and so on...
+There is a newer version `4.5.0`, but given, we use `NoSQLBooster`, it only works with `4.4.8` and the `4.4.x` is the stable, the next stable will be `4.6.0`, `4.8.0` and so on...
 
 
 ## Scripts for building
@@ -36,7 +36,7 @@ First stop the database server.
 
 The command:
 ```bash
-sudo ./scripts/build-server.sh 4.4.6
+sudo ./scripts/build-server.sh 4.4.8
 ```
 
 All defaults are in the config, that MongoDB uses:  
